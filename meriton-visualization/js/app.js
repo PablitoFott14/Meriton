@@ -52,6 +52,7 @@ function renderActiveTab() {
   rendered.add(tab);
   switch (tab) {
     case 'overview':      renderOverview(DATA); break;
+    case 'personal':      renderPersonal(DATA); break;
     case 'calendar':      renderCalendar(DATA); break;
     case 'finances':      renderFinances(DATA); break;
     case 'communications':renderCommunications(DATA); break;

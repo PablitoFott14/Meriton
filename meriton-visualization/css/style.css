@@ -555,6 +555,102 @@ tbody td.amt-neg { color: var(--rose); font-weight: 600; font-family: var(--mono
 @keyframes spin { to { transform: rotate(360deg); } }
 .loader-box p { font-size: 13px; color: var(--text3); }
 
+/* ─── DOSSIER (Personal tab) ─── */
+.dossier-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.dossier-layout .ds-full { grid-column: 1 / -1; }
+@media (max-width: 860px) { .dossier-layout { grid-template-columns: 1fr; } }
+
+.ds-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--sky);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.ds-section.accent-violet  { border-left-color: var(--violet); }
+.ds-section.accent-rose    { border-left-color: var(--rose); }
+.ds-section.accent-amber   { border-left-color: var(--amber); }
+.ds-section.accent-emerald { border-left-color: var(--emerald); }
+.ds-section.accent-cyan    { border-left-color: var(--cyan); }
+.ds-section.accent-pink    { border-left-color: var(--pink); }
+.ds-section.accent-orange  { border-left-color: var(--orange); }
+
+.ds-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.8px; color: var(--text2);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 6px;
+}
+.ds-title-icon { font-size: 13px; }
+
+.ds-row {
+  display: flex; gap: 10px; align-items: baseline;
+  padding: 4px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.ds-row:last-child { border-bottom: none; }
+.ds-key {
+  font-size: 11px; color: var(--text3); flex-shrink: 0;
+  width: 130px; font-weight: 500;
+}
+.ds-val { color: var(--text); line-height: 1.5; }
+.ds-val.mono { font-family: var(--mono); font-size: 12px; }
+.ds-val.muted { color: var(--text2); }
+.ds-val.highlight { color: var(--sky); font-weight: 600; }
+.ds-val.warn { color: var(--amber); font-weight: 600; }
+.ds-val.positive { color: var(--emerald); font-weight: 600; }
+.ds-val.negative { color: var(--rose); }
+
+.ds-block { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.ds-block:last-child { border-bottom: none; }
+.ds-block-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+.ds-block-role { font-size: 12px; color: var(--sky); margin-bottom: 4px; }
+.ds-block-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+.ds-block-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
+.ds-block-meta-item { font-size: 11px; color: var(--text3); }
+
+.ds-person {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px 4px 6px;
+  background: var(--surface2); border: 1px solid var(--border2);
+  border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+  margin: 2px;
+}
+.ds-person:hover { border-color: var(--sky); background: var(--surface3); }
+.ds-person-avatar {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  background: var(--surface3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 700; color: var(--text2);
+}
+.ds-person-role { font-size: 10px; color: var(--text3); margin-left: 2px; }
+
+.ds-status-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: var(--radius-sm);
+  margin-top: 8px; font-size: 12px;
+}
+.ds-status-row.ongoing  { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.15); }
+.ds-status-row.resolved { background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.15); }
+.ds-status-row.planned  { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.15); }
+.ds-status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.ds-status-dot.ongoing  { background: var(--amber); }
+.ds-status-dot.resolved { background: var(--emerald); }
+.ds-status-dot.planned  { background: var(--sky); }
+
+.ds-client-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+}
+.ds-client-row:last-child { border-bottom: none; }
+.ds-client-id { font-family: var(--mono); font-size: 11px; color: var(--sky); flex-shrink: 0; width: 90px; }
+.ds-client-name { font-weight: 500; }
+.ds-client-contact { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
 /* ─── MISC ─── */
 .btn-ghost {
   padding: 6px 12px; border-radius: var(--radius-sm);

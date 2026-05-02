@@ -23,6 +23,7 @@
 
       <nav class="tabs">
         <button class="tab active" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="personal">Personal</button>
         <button class="tab" data-tab="calendar">Calendar</button>
         <button class="tab" data-tab="finances">Finances</button>
         <button class="tab" data-tab="communications">Communications</button>
@@ -44,6 +45,11 @@
     <!-- ── OVERVIEW ── -->
     <section class="page active" id="page-overview">
       <div id="overview-content"></div>
+    </section>
+
+    <!-- ── PERSONAL ── -->
+    <section class="page" id="page-personal">
+      <div id="personal-content"></div>
     </section>
 
     <!-- ── CALENDAR ── -->
@@ -153,6 +159,7 @@
     </div>
   </div>
 
+  <script src="js/personal.js"></script>
   <script src="js/overview.js"></script>
   <script src="js/calendar.js"></script>
   <script src="js/finances.js"></script>
