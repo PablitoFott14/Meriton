@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christine Zhao — Meriton Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo">CZ</div>
+        <div class="brand-name">
+          <span>Christine Zhao</span>
+          <small>Meriton Universe · OpenClaw</small>
+        </div>
+      </div>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="calendar">Calendar</button>
+        <button class="tab" data-tab="finances">Finances</button>
+        <button class="tab" data-tab="communications">Communications</button>
+        <button class="tab" data-tab="contacts">Contacts</button>
+        <button class="tab" data-tab="cycling">Cycling</button>
+        <button class="tab" data-tab="entertainment">Entertainment</button>
+      </nav>
+
+      <div class="hdr-right">
+        <span class="pulse-dot" id="status-dot"></span>
+        <span class="status-text" id="status-text">Loading…</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main class="main">
+
+    <!-- ── OVERVIEW ── -->
+    <section class="page active" id="page-overview">
+      <div id="overview-content"></div>
+    </section>
+
+    <!-- ── CALENDAR ── -->
+    <section class="page" id="page-calendar">
+      <div class="page-title">
+        <h2>Calendar</h2>
+        <p>All events — personal and professional</p>
+      </div>
+      <div class="explorer-bar">
+        <input id="cal-search" class="ex-search" type="text" placeholder="Search events…" />
+        <select id="cal-tag" class="ex-filter">
+          <option value="">All Tags</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+        </select>
+        <span class="ex-count" id="cal-count"></span>
+      </div>
+      <div id="cal-list"></div>
+    </section>
+
+    <!-- ── FINANCES ── -->
+    <section class="page" id="page-finances">
+      <div class="page-title">
+        <h2>Finances</h2>
+        <p>Personal accounts, transactions, subscriptions · QuickBooks invoices and bills</p>
+      </div>
+      <div class="sub-tabs">
+        <button class="sub-tab active" data-subtab="fin-accounts">Accounts</button>
+        <button class="sub-tab" data-subtab="fin-transactions">Transactions</button>
+        <button class="sub-tab" data-subtab="fin-subscriptions">Subscriptions</button>
+        <button class="sub-tab" data-subtab="fin-invoices">Invoices</button>
+        <button class="sub-tab" data-subtab="fin-bills">Bills</button>
+      </div>
+      <div id="fin-accounts" class="sub-page active"></div>
+      <div id="fin-transactions" class="sub-page"></div>
+      <div id="fin-subscriptions" class="sub-page"></div>
+      <div id="fin-invoices" class="sub-page"></div>
+      <div id="fin-bills" class="sub-page"></div>
+    </section>
+
+    <!-- ── COMMUNICATIONS ── -->
+    <section class="page" id="page-communications">
+      <div class="page-title">
+        <h2>Communications</h2>
+        <p>Email and messages</p>
+      </div>
+      <div class="sub-tabs">
+        <button class="sub-tab active" data-subtab="comm-email">Email</button>
+        <button class="sub-tab" data-subtab="comm-messages">Messages</button>
+      </div>
+      <div id="comm-email" class="sub-page active"></div>
+      <div id="comm-messages" class="sub-page"></div>
+    </section>
+
+    <!-- ── CONTACTS ── -->
+    <section class="page" id="page-contacts">
+      <div class="page-title">
+        <h2>Contacts</h2>
+        <p>30 people and organizations</p>
+      </div>
+      <div class="explorer-bar">
+        <input id="contacts-search" class="ex-search" type="text" placeholder="Search by name, role, or description…" />
+        <span class="ex-count" id="contacts-count"></span>
+      </div>
+      <div id="contacts-list"></div>
+    </section>
+
+    <!-- ── CYCLING ── -->
+    <section class="page" id="page-cycling">
+      <div class="page-title">
+        <h2>Cycling</h2>
+        <p>Strava activity log · Raleigh Cycling Club</p>
+      </div>
+      <div id="cycling-content"></div>
+    </section>
+
+    <!-- ── ENTERTAINMENT ── -->
+    <section class="page" id="page-entertainment">
+      <div class="page-title">
+        <h2>Entertainment</h2>
+        <p>Ticketmaster orders · Sonos system</p>
+      </div>
+      <div id="entertainment-content"></div>
+    </section>
+
+  </main>
+
+  <!-- ══ MODAL ══ -->
+  <div id="modal-overlay" class="modal-overlay hidden" onclick="handleModalClick(event)">
+    <div class="modal-box" id="modal-box">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-badge" id="modal-badge"></span>
+          <span class="modal-title" id="modal-title"></span>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ══ LOADING ══ -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loader-box">
+      <div class="spinner"></div>
+      <p>Loading Meriton Universe…</p>
+    </div>
+  </div>
+
+  <script src="js/overview.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/finances.js"></script>
+  <script src="js/communications.js"></script>
+  <script src="js/contacts.js"></script>
+  <script src="js/cycling.js"></script>
+  <script src="js/entertainment.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
