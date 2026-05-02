@@ -112,6 +112,7 @@ function renderOverview(data) {
   }
 
   // Upcoming events
+  if (false) {
   html += `<div class="card">
     <h4>Upcoming Events</h4>`;
   if (upcoming.length === 0) {
@@ -132,6 +133,7 @@ function renderOverview(data) {
     });
   }
   html += '</div>'; // card
+  }
 
   html += '</div>'; // left column
 
